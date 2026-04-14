@@ -1876,13 +1876,10 @@ bookingForm?.addEventListener('submit', async (event) => {
 
   console.log('Booking request submitted:', bookingRequest);
 
-  if (FORMSPREE_ENDPOINT === 'PASTE_YOUR_FORMSPREE_ENDPOINT_HERE') {
-    if (bookingStatus) {
-      bookingStatus.textContent =
-        'Formspree endpoint is not connected yet. Please add your Formspree form URL.';
-    }
-    return;
-  }
+if (!FORMSPREE_ENDPOINT) {
+  alert('Form endpoint is missing')
+  return
+}
 
   try {
     const response = await fetch(FORMSPREE_ENDPOINT, {
