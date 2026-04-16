@@ -7,6 +7,7 @@ import seoulHero from './assets/seoul-hero.jpg';
 import nycGallery from './assets/nyc-gallery.jpg';
 import vancouverCard from './assets/vancouver-card.jpg';
 import banffCard from './assets/banff-card.jpg';
+import { inject } from '@vercel/analytics';
 
 const app = document.querySelector<HTMLDivElement>('#app');
 
@@ -1913,3 +1914,5 @@ if (!FORMSPREE_ENDPOINT) {
 
   bookingForm.reset();
 });
+
+inject();
