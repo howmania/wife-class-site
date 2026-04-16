@@ -1,4 +1,5 @@
 import sandraAvatar from './assets/sandra-avatar2.jpg';
+import sandraProfile1 from './assets/sandra_profile1.jpeg';
 import sandraReelThumb1 from './assets/sandra_reels_1.png';
 import sandraReelThumb2 from './assets/sandra_reels_2.png';
 import sandraReelThumb3 from './assets/sandra_reels_3.png';
@@ -195,9 +196,9 @@ app.innerHTML = `
     <div class="portrait-grid-lines"></div>
 
     <img
-      src="${sandraAvatar}"
+      src="${sandraProfile1}"
       alt="Sandra Hall Academy instructor profile"
-      class="portrait-image portrait-image-cutout"
+      class="portrait-image portrait-image-cutout hero-profile-image"
     />
 
     <div class="portrait-overlay-card reveal reveal-up">
@@ -227,29 +228,41 @@ app.innerHTML = `
         </div>
       </section>
 
-      <section id="about" class="feature-section split-section">
-        <div class="section-intro reveal reveal-left">
-          <span class="eyebrow">About Sandra · 산드라 소개</span>
-<h2>A refined, bilingual approach to learning Korean.</h2>
-        </div>
-        <div class="split-content reveal">
-          <p>
-            Sandra is a native Korean speaker from Seoul who grew up in both Korea and Canada.
-            She has more than 10 years of experience teaching Korean and English in institutions,
-            academies, and private lesson settings.
-          </p>
-          <p>
-            She brings together language instruction, translation and interpretation experience,
-            and a warm teaching style that helps students feel clear, comfortable, and motivated.
-          </p>
-          <div class="detail-chip-row">
-            <span>UBC Graduate</span>
-            <span>Business Translation & Interpretation</span>
-            <span>KLTAUSA 2025 AI-Integrated Instruction</span>
-            <span>Online + NYC Area In-Person</span>
-          </div>
-        </div>
-      </section>
+      <section id="about" class="feature-section split-section about-section">
+  <div class="section-intro reveal reveal-left">
+    <span class="eyebrow">About Sandra · 산드라 소개</span>
+    <h2>A refined, bilingual approach to learning Korean.</h2>
+  </div>
+
+  <div class="split-content reveal about-content-shell">
+    <div class="about-profile-card">
+      <img
+        src="${sandraAvatar}"
+        alt="Sandra Hall portrait"
+        class="about-profile-image"
+      />
+      <div class="about-profile-badge">Seoul · Vancouver · NYC</div>
+    </div>
+
+    <div class="about-copy">
+      <p>
+        Sandra is a native Korean speaker from Seoul who grew up in both Korea and Canada.
+        She has more than 10 years of experience teaching Korean and English in institutions,
+        academies, and private lesson settings.
+      </p>
+      <p>
+        She brings together language instruction, translation and interpretation experience,
+        and a warm teaching style that helps students feel clear, comfortable, and motivated.
+      </p>
+      <div class="detail-chip-row">
+        <span>UBC Graduate</span>
+        <span>Business Translation & Interpretation</span>
+        <span>KLTAUSA 2025 AI-Integrated Instruction</span>
+        <span>Online + NYC Area In-Person</span>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section id="programs" class="feature-section programs-section">
         <div class="section-intro reveal">
@@ -946,6 +959,75 @@ app.innerHTML = `
     will-change: transform;
     filter: saturate(0.98) contrast(1.04);
   }
+    
+  .hero-profile-image {
+  object-position: center 12%;
+  filter: saturate(1.02) contrast(1.03) brightness(1.02);
+}
+
+.about-section .split-content {
+  padding: 32px;
+}
+
+.about-content-shell {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.about-profile-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-profile-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.about-profile-badge {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(13, 16, 23, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  color: #f5f7fb;
+  font-size: 0.76rem;
+  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.about-copy {
+  display: grid;
+  gap: 16px;
+}
+
+.about-copy p {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .about-content-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .about-profile-card {
+    max-width: 280px;
+  }
+}
 
   .portrait-glow {
     position: absolute;
