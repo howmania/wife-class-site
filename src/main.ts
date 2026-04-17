@@ -216,7 +216,7 @@ app.innerHTML = `
       <section class="stats-ribbon reveal">
         <div>
           <strong data-count="10">10+</strong>
-          <span>Teaching Korean & English</span>
+          <span>Years of Teaching Korean & English</span>
         </div>
         <div>
           <strong>Free Intro Session</strong>
