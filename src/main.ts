@@ -169,51 +169,63 @@ app.innerHTML = `
 
     <main>
       <section id="hero" class="hero-section editorial-grid">
-        <div class="hero-copy reveal reveal-left">
-          <span class="eyebrow">Premium Korean Lessons</span>
-<h1>Learn Korean with clarity, confidence, and style.</h1>
-<p class="hero-text">
-  Sandra Hall Academy offers a modern Korean learning experience shaped by real
-  conversation, thoughtful structure, and warm one-on-one guidance online or in New York City.
-</p>
-          <div class="hero-actions">
-            <a href="#booking" class="btn btn-primary">Request Free Consultation + Free 30-Min Trial</a>
-            <a href="#programs" class="btn btn-secondary">Explore Programs</a>
-          </div>
-        </div>
+  <div class="hero-copy reveal reveal-left">
+    <span class="eyebrow">Korean Lessons · 中文初学者欢迎 · 日本語初心者歓迎</span>
 
-        <div class="hero-portrait reveal">
-  <div class="portrait-card interactive-card" id="heroPortraitCard">
-    <div class="portrait-city-backdrop" style="background-image:
-      linear-gradient(180deg, rgba(6, 10, 18, 0.14), rgba(6, 10, 18, 0.64)),
-      url('${seoulHero}');
-    "></div>
+    <h1>Learn Korean with support that fits you.</h1>
 
-    <div class="portrait-glow"></div>
-    <div class="portrait-float-shape shape-one"></div>
-    <div class="portrait-float-shape shape-two"></div>
-    <div class="portrait-float-shape shape-three"></div>
-    <div class="portrait-grid-lines"></div>
+    <p class="hero-text">
+      Sandra Hall Academy offers personalized Korean lessons taught in English and Korean,
+      with beginner-friendly support for Chinese and Japanese-speaking students.
+      Lessons also use AI-assisted tools for practice, review, vocabulary, and clearer understanding.
+    </p>
 
-    <img
-      src="${sandraProfile1}"
-      alt="Sandra Hall Academy instructor profile"
-      class="portrait-image portrait-image-cutout hero-profile-image"
-    />
+    <div class="hero-actions">
+      <a href="#booking" class="btn btn-primary">Book a Free Intro Session</a>
+      <a href="#about" class="btn btn-secondary">Meet Sandra</a>
+    </div>
+    <div class="hero-language-tags">
+  <span>Korean & English Lessons</span>
+  <span>中文初学者欢迎</span>
+  <span>日本語初心者歓迎</span>
+  <span>AI-Assisted Practice</span>
+</div>
+  </div>
 
-    <div class="portrait-overlay-card reveal reveal-up">
-      <span class="mini-label">Seoul · Modern Korean Learning</span>
-      <ul>
-        <li>Beginner to advanced learning</li>
-        <li>Customized lesson flow</li>
-        <li>Online and NYC area lessons</li>
-      </ul>
+  <div class="hero-portrait reveal">
+    <div class="portrait-card interactive-card" id="heroPortraitCard">
+      <div class="portrait-city-backdrop" style="background-image:
+        linear-gradient(180deg, rgba(6, 10, 18, 0.14), rgba(6, 10, 18, 0.64)),
+        url('${seoulHero}');
+      "></div>
+
+      <div class="portrait-glow"></div>
+      <div class="portrait-float-shape shape-one"></div>
+      <div class="portrait-float-shape shape-two"></div>
+      <div class="portrait-float-shape shape-three"></div>
+      <div class="portrait-grid-lines"></div>
+
+      <img
+        src="${sandraProfile1}"
+        alt="Sandra Hall Academy instructor profile"
+        class="portrait-image portrait-image-cutout hero-profile-image"
+      />
+
+      <div class="portrait-overlay-card reveal reveal-up">
+        <span class="mini-label">Seoul · Multilingual Korean Learning</span>
+        <ul>
+          <li>English & Korean instruction</li>
+          <li>Chinese/Japanese beginner support</li>
+          <li>AI-assisted practice and review</li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-      </section>
+</section>
 
       <section class="stats-ribbon reveal">
+
+
         <div>
           <strong data-count="10">10+</strong>
           <span>Years of Teaching Korean & English</span>
@@ -254,6 +266,10 @@ app.innerHTML = `
         She brings together language instruction, translation and interpretation experience,
         and a warm teaching style that helps students feel clear, comfortable, and motivated.
       </p>
+      <p>
+  Sandra teaches primarily in English and Korean, and provides beginner-friendly support for Chinese and Japanese-speaking students.
+  She also uses AI-assisted learning tools to personalize practice, review vocabulary, and make Korean easier to understand across different language backgrounds.
+</p>
       <div class="detail-chip-row">
         <span>UBC Graduate</span>
         <span>Business Translation & Interpretation</span>
@@ -603,6 +619,35 @@ app.innerHTML = `
         <div id="bookingStatus" class="booking-status" aria-live="polite"></div>
       </section>
     </main>
+    <div class="promo-modal" id="promoModal" aria-hidden="true">
+  <div class="promo-modal-backdrop" id="promoModalBackdrop"></div>
+
+  <div class="promo-modal-card" role="dialog" aria-modal="true" aria-labelledby="promoModalTitle">
+    <button class="promo-modal-close" id="promoModalClose" aria-label="Close welcome offer">
+      ×
+    </button>
+
+    <p class="promo-kicker">New Student Welcome Offer</p>
+
+    <h2 id="promoModalTitle">Get a free personalized Korean learning roadmap</h2>
+
+    <p class="promo-modal-text">
+      Book a free intro session and Sandra will recommend the best Korean lesson plan
+      for your level, goals, and language background.
+    </p>
+
+    <div class="promo-modal-tags">
+      <span>中文初学者欢迎</span>
+      <span>日本語初心者歓迎</span>
+      <span>AI-assisted review included</span>
+    </div>
+
+    <div class="promo-modal-actions">
+      <a href="#booking" class="btn btn-primary" id="promoModalCta">Get My Free Korean Roadmap</a>
+      <button class="promo-modal-later" id="promoModalLater">Maybe later</button>
+    </div>
+  </div>
+</div>
   </div>
 
   <style>
@@ -798,8 +843,8 @@ app.innerHTML = `
     margin: 12px 0 16px;
     color: var(--text);
     font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-    line-height: 0.92;
-    letter-spacing: -0.07em;
+    line-height: 0.97;
+    letter-spacing: -0.05em;
     font-weight: 800;
   }
 
@@ -842,7 +887,27 @@ app.innerHTML = `
     align-items: center;
     margin-top: 28px;
   }
+.hero-language-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 18px;
+  color: rgba(238, 243, 255, 0.86);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
 
+.hero-language-tags span {
+  position: relative;
+  padding-left: 14px;
+}
+
+.hero-language-tags span::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: rgba(238, 243, 255, 0.55);
+}
   .btn {
     display: inline-flex;
     align-items: center;
@@ -854,6 +919,111 @@ app.innerHTML = `
     transition: transform 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease;
   }
 
+  .promo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.promo-modal.is-visible {
+  display: flex;
+}
+
+.promo-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 10, 18, 0.68);
+  backdrop-filter: blur(8px);
+}
+
+.promo-modal-card {
+  position: relative;
+  width: min(92vw, 520px);
+  padding: 34px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 218, 170, 0.28), transparent 34%),
+    linear-gradient(145deg, #fffaf3, #f7eadb);
+  color: #2d1d14;
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.34);
+  border: 1px solid rgba(120, 80, 40, 0.16);
+}
+
+.promo-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(45, 29, 20, 0.08);
+  color: #2d1d14;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.promo-kicker {
+  margin: 0 0 12px;
+  color: #9a5b2f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.promo-modal-card h2 {
+  margin: 0 0 14px;
+  font-size: clamp(1.9rem, 5vw, 2.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.promo-modal-text {
+  margin: 0;
+  color: #6b4b35;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.promo-modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.promo-modal-tags span {
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(120, 80, 40, 0.12);
+  color: #6b4b35;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.promo-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.promo-modal-later {
+  border: 0;
+  background: transparent;
+  color: #6b4b35;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 12px 8px;
+}
   .btn:hover {
     transform: translateY(-2px);
   }
@@ -1996,5 +2166,37 @@ if (!FORMSPREE_ENDPOINT) {
 
   bookingForm.reset();
 });
+
+
+const promoModal = document.querySelector<HTMLElement>('#promoModal')
+const promoModalClose = document.querySelector<HTMLButtonElement>('#promoModalClose')
+const promoModalBackdrop = document.querySelector<HTMLElement>('#promoModalBackdrop')
+const promoModalLater = document.querySelector<HTMLButtonElement>('#promoModalLater')
+const promoModalCta = document.querySelector<HTMLAnchorElement>('#promoModalCta')
+
+const closePromoModal = () => {
+  promoModal?.classList.remove('is-visible')
+  promoModal?.setAttribute('aria-hidden', 'true')
+  sessionStorage.setItem('promoModalClosed', 'true')
+}
+
+setTimeout(() => {
+  if (!sessionStorage.getItem('promoModalClosed')) {
+    promoModal?.classList.add('is-visible')
+    promoModal?.setAttribute('aria-hidden', 'false')
+  }
+}, 3000)
+
+promoModalClose?.addEventListener('click', closePromoModal)
+promoModalBackdrop?.addEventListener('click', closePromoModal)
+promoModalLater?.addEventListener('click', closePromoModal)
+promoModalCta?.addEventListener('click', closePromoModal)
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    closePromoModal()
+  }
+})
+
 
 inject();
