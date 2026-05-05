@@ -629,23 +629,24 @@ app.innerHTML = `
 
     <p class="promo-kicker">New Student Welcome Offer</p>
 
-    <h2 id="promoModalTitle">Get a free personalized Korean learning roadmap</h2>
+<h2 id="promoModalTitle">Book a free intro session with Sandra</h2>
 
-    <p class="promo-modal-text">
-      Book a free intro session and Sandra will recommend the best Korean lesson plan
-      for your level, goals, and language background.
-    </p>
+<p class="promo-modal-text">
+  Get personalized Korean lesson recommendations based on your level,
+  goals, and language background.
+</p>
 
-    <div class="promo-modal-tags">
-      <span>中文初学者欢迎</span>
-      <span>日本語初心者歓迎</span>
-      <span>AI-assisted review included</span>
-    </div>
+<div class="promo-modal-tags">
+  <span>Beginner-friendly lessons available</span>
+  <span>Online lessons available</span>
+  <span>NYC area in-person lessons available</span>
+  <span>AI-assisted review included</span>
+</div>
 
-    <div class="promo-modal-actions">
-      <a href="#booking" class="btn btn-primary" id="promoModalCta">Get My Free Korean Roadmap</a>
-      <button class="promo-modal-later" id="promoModalLater">Maybe later</button>
-    </div>
+<div class="promo-modal-actions">
+  <a href="#booking" class="btn btn-primary" id="promoModalCta">Book a Free Intro Session</a>
+  <button class="promo-modal-later" id="promoModalLater">Maybe later</button>
+</div>
   </div>
 </div>
   </div>
