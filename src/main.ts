@@ -1741,48 +1741,67 @@ app.innerHTML = `
   border-color: rgba(255, 255, 255, 0.14);
 }
 
+/* 5-session package highlight */
 .deal-step {
   position: relative;
+  border: 1.5px solid rgba(255, 207, 77, 0.55);
   background:
-    radial-gradient(circle at top right, rgba(143, 183, 255, 0.12), transparent 34%),
-    rgba(255, 255, 255, 0.04);
+    radial-gradient(circle at top right, rgba(255, 207, 77, 0.22), transparent 36%),
+    linear-gradient(135deg, rgba(255, 207, 77, 0.12), rgba(255, 255, 255, 0.045));
+  box-shadow: 0 18px 42px rgba(255, 207, 77, 0.12);
 }
 
+/* 10-session package stronger highlight */
 .best-value-step {
-  border-color: rgba(143, 183, 255, 0.34);
-  box-shadow: 0 18px 42px rgba(143, 183, 255, 0.12);
+  border: 2px solid rgba(255, 207, 77, 0.88);
+  background:
+    radial-gradient(circle at top right, rgba(255, 207, 77, 0.34), transparent 38%),
+    linear-gradient(135deg, rgba(255, 207, 77, 0.2), rgba(255, 255, 255, 0.06));
+  box-shadow:
+    0 22px 52px rgba(255, 207, 77, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+  transform: translateY(-6px);
 }
 
-.deal-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 30px;
-  padding: 0 11px;
-  margin-bottom: 14px;
+/* Optional: small ribbon for best value card */
+.best-value-step::before {
+  content: "RECOMMENDED";
+  position: absolute;
+  top: -13px;
+  right: 18px;
+  padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #eef3ff;
-  font-size: 0.74rem;
-  font-weight: 800;
+  background: linear-gradient(135deg, #ffcf4d, #ffb703);
+  color: #0b0d12;
+  font-size: 0.68rem;
+  font-weight: 900;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.soft-badge {
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--accent-soft);
+  box-shadow: 0 10px 22px rgba(255, 183, 3, 0.28);
 }
 
 .save-badge {
-  background: rgba(255, 255, 255, 0.92);
+  background: linear-gradient(135deg, #fff4c2, #ffcf4d);
   color: #0b0d12;
+  box-shadow: 0 10px 22px rgba(255, 207, 77, 0.18);
 }
 
 .best-badge {
-  background: linear-gradient(135deg, #ffffff 0%, #dbe7ff 100%);
+  background: linear-gradient(135deg, #ffcf4d 0%, #ffb703 100%);
   color: #0b0d12;
-  box-shadow: 0 12px 22px rgba(143, 183, 255, 0.16);
+  box-shadow: 0 12px 24px rgba(255, 183, 3, 0.28);
+}
+
+/* hover effect */
+.deal-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 50px rgba(255, 207, 77, 0.18);
+}
+
+.best-value-step:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow:
+    0 28px 62px rgba(255, 207, 77, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
 }
 
 .price-line {
