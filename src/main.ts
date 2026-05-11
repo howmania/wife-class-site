@@ -10,6 +10,20 @@ import vancouverCard from './assets/vancouver-card.jpg';
 import banffCard from './assets/banff-card.jpg';
 import { inject } from '@vercel/analytics';
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+const trackBookAppointmentConversion = () => {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-18124233012/szOKCKnA8KMcELSyp8JD',
+    });
+  }
+};
+
 const app = document.querySelector<HTMLDivElement>('#app');
 
 if (!app) {
@@ -2151,6 +2165,8 @@ if (!FORMSPREE_ENDPOINT) {
     if (!response.ok) {
       throw new Error('Request failed');
     }
+
+        trackBookAppointmentConversion();
 
     if (bookingStatus) {
       bookingStatus.textContent =
