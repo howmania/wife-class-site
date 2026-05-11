@@ -30,22 +30,7 @@ if (!app) {
   throw new Error('App root not found');
 }
 
-const timeSlots = [
-  '8:00 AM',
-  '9:00 AM',
-  '10:00 AM',
-  '11:00 AM',
-  '12:00 PM',
-  '1:00 PM',
-  '2:00 PM',
-  '3:00 PM',
-  '4:00 PM',
-  '5:00 PM',
-  '6:00 PM',
-  '7:00 PM',
-  '8:00 PM',
-  '9:00 PM',
-];
+
 
 const testimonials = [
   {
@@ -119,17 +104,6 @@ const floatingWords = [
   { text: '배워요', top: '54%', left: '16%', delay: '2.8s' },
 ];
 
-const createTimeOptions = () =>
-  timeSlots
-    .map(
-      (time) => `
-        <label class="pill-option time-pill-option">
-          <input type="radio" name="preferredTime" value="${time}" />
-          <span>${time}</span>
-        </label>
-      `,
-    )
-    .join('');
 
 const createTestimonials = () =>
   testimonials
@@ -177,8 +151,9 @@ app.innerHTML = `
         <a href="#about">About</a>
         <a href="#programs">Programs</a>
         <a href="#reviews">Reviews</a>
+        <a href="#rates">Rates</a>
         <a href="#booking">Book</a>
-      </nav>
+</nav>
     </header>
 
     <main>
@@ -192,6 +167,8 @@ app.innerHTML = `
       Sandra Hall Academy offers personalized Korean lessons taught in English and Korean,
       with beginner-friendly support for Chinese and Japanese-speaking students.
       Lessons also use AI-assisted tools for practice, review, vocabulary, and clearer understanding.
+      Students can also learn practical Korean for traveling in Korea, including restaurant phrases,
+      local culture, and real-life tips from Sandra’s own travel experience.
     </p>
 
     <div class="hero-actions">
@@ -203,6 +180,7 @@ app.innerHTML = `
   <span>中文初学者欢迎</span>
   <span>日本語初心者歓迎</span>
   <span>AI-Assisted Practice</span>
+  <span>Korea Travel Tips</span>
 </div>
   </div>
 
@@ -231,6 +209,7 @@ app.innerHTML = `
           <li>English & Korean instruction</li>
           <li>Chinese/Japanese beginner support</li>
           <li>AI-assisted practice and review</li>
+          <li>Korea Travel Tips</li>
         </ul>
       </div>
     </div>
@@ -281,9 +260,14 @@ app.innerHTML = `
         and a warm teaching style that helps students feel clear, comfortable, and motivated.
       </p>
       <p>
-  Sandra teaches primarily in English and Korean, and provides beginner-friendly support for Chinese and Japanese-speaking students.
-  She also uses AI-assisted learning tools to personalize practice, review vocabulary, and make Korean easier to understand across different language backgrounds.
-</p>
+        Sandra has also traveled extensively throughout Korea and beyond, so her lessons can include practical travel tips,
+        local food recommendations, cultural insights, and useful Korean phrases for restaurants, cafés, shopping, transportation,
+        and everyday situations during a trip to Korea.
+      </p>
+      <p>
+        Sandra teaches primarily in English and Korean, and provides beginner-friendly support for Chinese and Japanese-speaking students.
+        She also uses AI-assisted learning tools to personalize practice, review vocabulary, and make Korean easier to understand across different language backgrounds.
+      </p>
       <div class="detail-chip-row">
         <span>UBC Graduate</span>
         <span>Business Translation & Interpretation</span>
@@ -319,6 +303,14 @@ app.innerHTML = `
             <span class="program-index">04</span>
             <h3>Private & Group</h3>
             <p>Flexible formats for one-on-one students, families, friends, and small groups.</p>
+          </article>
+          <article class="program-card reveal reveal-up">
+            <span class="program-index">05</span>
+            <h3>Korea Travel Korean</h3>
+            <p>
+              Learn useful Korean for restaurants, cafés, shopping, transportation, and real travel situations,
+              with Sandra’s personal tips on local food, places to visit, and cultural etiquette.
+              </p>
           </article>
         </div>
       </section>
@@ -521,35 +513,60 @@ app.innerHTML = `
         </div>
       </section>
 
-      <section class="feature-section pricing-section reveal">
-        <div class="pricing-shell">
-          <div>
-            <span class="eyebrow">Start here · 시작하기</span>
-            <h2>Begin with a lower-pressure first step.</h2>
-          </div>
-          <div class="pricing-steps">
-            <div class="pricing-step">
-              <strong>Free Intro Session</strong>
-              <p>Start with one free session that combines consultation and a trial lesson experience.</p>
-            </div>
-            <div class="pricing-step">
-              <strong>Personalized Recommendation</strong>
-              <p>After the intro session, Sandra can suggest the best next step for your goals.</p>
-            </div>
-            <div class="pricing-step">
-              <strong>Ongoing Plan</strong>
-              <p>Continue with a personalized plan based on your needs.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section id="rates" class="feature-section pricing-section reveal">
+  <div class="pricing-shell">
+    <div>
+      <span class="eyebrow">Rates & Packages · 수업료</span>
+      <h2>Start free, then choose the lesson plan that fits you.</h2>
+      <p class="pricing-intro">
+        Begin with a free 30-minute intro session. After that, choose single lessons or save with a package.
+      </p>
+    </div>
 
+    <div class="pricing-steps">
+      <div class="pricing-step intro-step">
+        <span class="deal-badge soft-badge">First Step</span>
+        <strong>Free 30-Min Intro Session</strong>
+        <p>Consultation + short trial lesson experience. No payment is required at this step.</p>
+      </div>
+
+      <div class="pricing-step">
+        <span class="deal-badge">Standard Rate</span>
+        <strong>Single Lesson</strong>
+        <div class="price-line">
+          <span class="current-price">$45</span>
+          <span class="price-unit">/ hour</span>
+        </div>
+        <p>Flexible one-hour Korean lesson for your level, goals, and schedule.</p>
+      </div>
+
+      <div class="pricing-step deal-step">
+        <span class="deal-badge save-badge">Save $25</span>
+        <strong>5-Session Package</strong>
+        <div class="price-line">
+          <span class="original-price">$225</span>
+          <span class="current-price">$200</span>
+        </div>
+        <p>Great for students who want a steady weekly rhythm and a lower package price.</p>
+      </div>
+
+      <div class="pricing-step deal-step best-value-step">
+        <span class="deal-badge best-badge">Best Value · Save $50</span>
+        <strong>10-Session Package</strong>
+        <div class="price-line">
+          <span class="original-price">$450</span>
+          <span class="current-price">$400</span>
+        </div>
+        <p>The best option for serious learners who want consistent progress over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
       <section id="booking" class="feature-section booking-section">
         <div class="section-intro reveal reveal-left">
           <span class="eyebrow">Booking · 상담 신청</span>
-          <h2>Request free consultation + free 30-min trial.</h2>
-          <p>
-            Choose one preferred date and one preferred time. Sandra will review your request and follow up with the best available option.
+          <h2>Request a free consultation + 30-min intro session.</h2>
+            <p>Tell Sandra about your learning goals. She will follow up to discuss the best schedule and lesson plan.
           </p>
         </div>
 
@@ -585,15 +602,9 @@ app.innerHTML = `
             </label>
           </div>
 
-          <label>
-            <span>Preferred Date</span>
-            <input type="date" name="preferredDate" required />
-          </label>
+          
 
-          <div class="form-section">
-            <span class="section-label">Preferred Time</span>
-            <div class="pill-grid time-pill-grid">${createTimeOptions()}</div>
-          </div>
+          
 
           <label>
             <span>Learning Goals</span>
@@ -615,13 +626,13 @@ app.innerHTML = `
           </label>
 
           <div class="booking-flow-card">
-            <h3>Booking Flow</h3>
-            <ol>
-              <li>Submit your preferred date, time, and learning goals.</li>
-              <li>Your request is marked as <strong>Pending</strong>.</li>
-              <li>Sandra reviews your requested date and time.</li>
-              <li>You receive a follow-up confirmation.</li>
-            </ol>
+            <h3>How It Works</h3>
+              <ol>
+                <li>Submit your learning goals and lesson request.</li>
+                <li>Sandra reviews your needs and current level.</li>
+                <li>You discuss the best schedule and lesson format together.</li>
+                <li>Your free 30-minute intro session is confirmed after follow-up.</li>
+              </ol>
           </div>
 
           <div class="form-actions">
@@ -1709,17 +1720,100 @@ app.innerHTML = `
   }
 
   .pricing-steps {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-    margin-top: 24px;
-  }
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
 
   .pricing-step {
     padding: 20px;
     border-radius: 22px;
     transition: transform 0.22s ease, border-color 0.22s ease;
   }
+  .pricing-intro {
+  margin: 0;
+  color: var(--muted);
+  max-width: 56ch;
+}
+
+.intro-step {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.deal-step {
+  position: relative;
+  background:
+    radial-gradient(circle at top right, rgba(143, 183, 255, 0.12), transparent 34%),
+    rgba(255, 255, 255, 0.04);
+}
+
+.best-value-step {
+  border-color: rgba(143, 183, 255, 0.34);
+  box-shadow: 0 18px 42px rgba(143, 183, 255, 0.12);
+}
+
+.deal-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0 11px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #eef3ff;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.soft-badge {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--accent-soft);
+}
+
+.save-badge {
+  background: rgba(255, 255, 255, 0.92);
+  color: #0b0d12;
+}
+
+.best-badge {
+  background: linear-gradient(135deg, #ffffff 0%, #dbe7ff 100%);
+  color: #0b0d12;
+  box-shadow: 0 12px 22px rgba(143, 183, 255, 0.16);
+}
+
+.price-line {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 12px 0 12px;
+  flex-wrap: wrap;
+}
+
+.original-price {
+  color: rgba(166, 175, 191, 0.82);
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.current-price {
+  color: #ffffff;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+.price-unit {
+  color: var(--muted);
+  font-size: 0.98rem;
+  font-weight: 700;
+}
 
   .booking-form {
     display: grid;
@@ -2120,14 +2214,7 @@ bookingForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const formData = new FormData(bookingForm);
-  const selectedTime = formData.get('preferredTime');
-
-  if (!selectedTime) {
-    if (bookingStatus) {
-      bookingStatus.textContent = 'Please choose one preferred time.';
-    }
-    return;
-  }
+  
 
   const bookingRequest = {
     status: 'Pending',
@@ -2136,8 +2223,6 @@ bookingForm?.addEventListener('submit', async (event) => {
     email: formData.get('email'),
     lessonFormat: formData.get('lessonFormat'),
     level: formData.get('level'),
-    preferredDate: formData.get('preferredDate'),
-    preferredTime: selectedTime,
     goals: formData.get('goals'),
     notes: formData.get('notes'),
   };
