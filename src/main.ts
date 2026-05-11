@@ -545,17 +545,17 @@ app.innerHTML = `
         <strong>5-Session Package</strong>
         <div class="price-line">
           <span class="original-price">$225</span>
-          <span class="current-price">$200</span>
+          <span class="current-price">$199.99</span>
         </div>
         <p>Great for students who want a steady weekly rhythm and a lower package price.</p>
       </div>
 
       <div class="pricing-step deal-step best-value-step">
-        <span class="deal-badge best-badge">Best Value · Save $50</span>
+        <span class="deal-badge best-badge">Best Value · Save $70</span>
         <strong>10-Session Package</strong>
         <div class="price-line">
           <span class="original-price">$450</span>
-          <span class="current-price">$400</span>
+          <span class="current-price">$379.99</span>
         </div>
         <p>The best option for serious learners who want consistent progress over time.</p>
       </div>
